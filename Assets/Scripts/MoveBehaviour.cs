@@ -12,6 +12,11 @@ public class MoveBehaviour : MonoBehaviour
 
     private void Update()
     {
+        foxMovement();
+    }
+
+    private void foxMovement()
+    {
         playerRigidbody = GetComponent<Rigidbody>();
 
         if (Input.GetKey(KeyCode.W))
@@ -38,5 +43,4 @@ public class MoveBehaviour : MonoBehaviour
             playerRigidbody.MoveRotation(Quaternion.Euler(transform.localRotation.eulerAngles + Vector3.up * rotationSpeed * Time.deltaTime * 1));
         }
     }
-
 }
